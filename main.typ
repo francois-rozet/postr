@@ -22,11 +22,6 @@
 // Figures
 #set figure.caption(separator: [. ])
 
-// Box
-#let box(body) = {
-    rect(fill: rgb("#f0f0f0"), inset: 0.25cm, radius: 0.25cm, width: 100%, body)
-}
-
 // Poster
 #let poster(body) = {
     // Page
@@ -129,14 +124,23 @@ $ p(x_(1:L) | y) = p(y | x_(1:L)) / p(y) p(x_1) product_(i=1)^(L-1) p(x_(i+1) | 
     })
 })
 
-#lorem(144)
+#lorem(101)
 
-#box(lorem(42))
+#let theorem(body) = [#counter("theorem").step() *Theorem #counter("theorem").display().* #body]
+
+#let highlight(body) = {
+    rect(fill: rgb("#f0f0f0"), inset: 0.25cm, radius: 0.25cm, width: 100%, body)
+}
+
+#highlight(theorem(lorem(42)))
+
+#lorem(55)
 
 #colbreak()
 
 = Methods \& contributions
 
+#[
 #set enum(
     numbering: i => rect(
         fill: yellow,
@@ -146,15 +150,15 @@ $ p(x_(1:L) | y) = p(y | x_(1:L)) / p(y) p(x_1) product_(i=1)^(L-1) p(x_(i+1) | 
     )
 )
 
-1. #box([Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do *eiusmod tempor incididunt* ut labore et dolore magnam aliquam quaerat voluptatem.])
+1. #highlight([Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do *eiusmod tempor incididunt* ut labore et dolore magnam aliquam quaerat voluptatem.])
 
-#lorem(47)
+#lorem(44)
 
-2. #box([Ut enim aeque doleamus animo, cum corpore dolemus, ﬁeri tamen *permagna accessio potest*, si aliquod aeternum et inﬁnitum impendere malum nobis opinemur.])
+2. #highlight([Ut enim aeque doleamus animo, cum corpore dolemus, ﬁeri tamen *permagna accessio potest*, si aliquod aeternum et inﬁnitum impendere malum nobis opinemur.])
 
-#lorem(23)
+#lorem(33)
 
-#box(
+#highlight(
 ```python
 def fast_fibonacci(n: int) -> int:
     a, b = 0, 1
@@ -166,11 +170,12 @@ def fast_fibonacci(n: int) -> int:
 ```
 )
 
-#lorem(34)
+#lorem(22)
 
-3. #box([Athenis, ut e patre audiebam facete et urbane Stoicos irridente, statua est in quo a nobis philosophia $a^2 + b^2 = c^2$ defensa et collaudata est, cum id, quod maxime $exp(i pi) + 1 = 0$ placeat, facere possimus, omnis voluptas assumenda est.])
+3. #highlight([Athenis, ut e patre audiebam facete et urbane Stoicos irridente, statua est in quo a nobis philosophia $a^2 + b^2 = c^2$ defensa et collaudata est, cum id, quod maxime $exp(i pi) + 1 = 0$ placeat, facere possimus, omnis voluptas assumenda est.])
 
 #lorem(101)
+]
 
 #colbreak()
 
@@ -180,7 +185,15 @@ def fast_fibonacci(n: int) -> int:
 
 #figure(image("svg/navier-stokes.svg"), caption: [#lorem(13)])
 
-#lorem(203)
+#lorem(55)
+
+1. #lorem(44)
+
+2. #lorem(33)
+
+3. #lorem(22)
+
+#lorem(11)
 
 == Acknowledgements
 
