@@ -128,11 +128,11 @@ $ p(x_(1:L) | y) = p(y | x_(1:L)) / p(y) p(x_1) product_(i=1)^(L-1) p(x_(i+1) | 
 
 #let theorem(body) = [#counter("theorem").step() *Theorem #counter("theorem").display().* #body]
 
-#let highlight(body) = {
+#let showcase(body) = {
     rect(fill: rgb("#f0f0f0"), inset: 0.25cm, radius: 0.25cm, width: 100%, body)
 }
 
-#highlight(theorem(lorem(42)))
+#showcase(theorem(lorem(42)))
 
 #lorem(55)
 
@@ -150,15 +150,15 @@ $ p(x_(1:L) | y) = p(y | x_(1:L)) / p(y) p(x_1) product_(i=1)^(L-1) p(x_(i+1) | 
     )
 )
 
-1. #highlight([Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do *eiusmod tempor incididunt* ut labore et dolore magnam aliquam quaerat voluptatem.])
+1. #showcase([Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do *eiusmod tempor incididunt* ut labore et dolore magnam aliquam quaerat voluptatem.])
 
 #lorem(44)
 
-2. #highlight([Ut enim aeque doleamus animo, cum corpore dolemus, ﬁeri tamen *permagna accessio potest*, si aliquod aeternum et inﬁnitum impendere malum nobis opinemur.])
+2. #showcase([Ut enim aeque doleamus animo, cum corpore dolemus, ﬁeri tamen *permagna accessio potest*, si aliquod aeternum et inﬁnitum impendere malum nobis opinemur.])
 
 #lorem(33)
 
-#highlight(
+#showcase(
 ```python
 def fast_fibonacci(n: int) -> int:
     a, b = 0, 1
@@ -172,7 +172,7 @@ def fast_fibonacci(n: int) -> int:
 
 #lorem(22)
 
-3. #highlight([Athenis, ut e patre audiebam facete et urbane Stoicos irridente, statua est in quo a nobis philosophia $a^2 + b^2 = c^2$ defensa et collaudata est, cum id, quod maxime $exp(i pi) + 1 = 0$ placeat, facere possimus, omnis voluptas assumenda est.])
+3. #showcase([Athenis, ut e patre audiebam facete et urbane Stoicos irridente, statua est in quo a nobis philosophia $a^2 + b^2 = c^2$ defensa et collaudata est, cum id, quod maxime $exp(i pi) + 1 = 0$ placeat, facere possimus, omnis voluptas assumenda est.])
 
 #lorem(101)
 ]
